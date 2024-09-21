@@ -1,5 +1,12 @@
 import streamlit as st
 
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 IMAGE_CLASSIFICATION_DIRECTORY_PATH = "views/projects/image_classification"
 OBJECT_DETECTION_DIRECTORY_PATH = "views/projects/object detection"
 SEGMENTATION_DIRECTORY_PATH = "views/projects/segmentation"
