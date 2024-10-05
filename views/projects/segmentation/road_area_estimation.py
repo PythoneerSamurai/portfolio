@@ -20,8 +20,8 @@ st.write("""
 In the case of this project, only one yolov9e model has been utilized, that for road segmentation.
 
 The dataset used to train the model is the
-[DeepGlobe Road Extraction Dataset](https://www.kaggle.com/datasets/balraj98/deepglobe-road-extraction-dataset) 
-dataset provided by "**Balraj Ashwath**" on Kaggle.
+[DeepGlobe Road Extraction Dataset](https://www.kaggle.com/datasets/balraj98/deepglobe-road-extraction-dataset)
+provided by "**Balraj Ashwath**" on Kaggle.
 
 The dataset has only one class for segmentation, that is "road".
 
