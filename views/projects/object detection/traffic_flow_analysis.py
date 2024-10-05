@@ -9,9 +9,9 @@ with st.container(height=400, border=True):
 st.write("\n")
 st.subheader("Project Overview", divider=True)
 st.write("""
-In this project I have utilized various computer vision techniques, including but not limited to, region-based object 
-detection, object tracking, and object counting, for the purpose of carrying out traffic flow analysis. I have
-successfully traced the path followed by each vehicle on the roundabout for the purpose of analyzing the flow of 
+In this project, I have utilized various computer vision techniques, including but not limited to, region-based object 
+detection, object tracking, and object counting, to carry out traffic flow analysis. I have
+successfully traced the path followed by each vehicle on the roundabout to analyze the flow of 
 traffic.
 """)
 
@@ -19,7 +19,7 @@ st.write("\n")
 st.subheader("Training Pipeline", divider=True)
 st.write("##### Training Data")
 st.write("""
-In the case of this project, only one yolov10x model has been utilized, that for the purpose of vehicle detection
+In the case of this project, only one yolov10x model has been utilized, for vehicle detection
 based upon aerial images.
 
 The dataset used to train the head detection model is the
@@ -43,11 +43,11 @@ had sub-directories "train", "test", and "val".
 
 st.write("##### Model Used")
 st.write("""
-As mentioned above, only one model has been used in this project, that is a **yolov10x** model for vehicle detection . 
+As mentioned above, only one model has been used in this project: a **yolov10x** model for vehicle detection. 
 The model is the largest variant of its kind (as inferred by the "x" in the name of the model), and thus has the 
 highest mAP (Mean Average Precision) value, as benchmarked on the COCO dataset.
 
-In the case of this project, pretrained model (yolov10x.pt) was not used, rather a new model (yolov10x.yaml) was trained 
+In the case of this project, a pre-trained model (yolov10x.pt) was not used, rather a new model (yolov10x.yaml) was trained 
 from scratch (this resulted in better precision and recall).
 
 The model was accessed and trained using the Ultralytics YOLO API, as provided in the **"ultralytics"** Python
@@ -59,15 +59,15 @@ For more information regarding the YOLO models, refer to the
 
 st.write("##### Training Analysis")
 st.write("""
-The model was trained using the ".train" function present in the ultralytics YOLO class.
+The model was trained using the ".train" function in the ultralytics YOLO class.
 
-The maximum amount of epochs that the model could train for was set to 800, with a patience of 80 epochs
+The maximum amount of epochs that the model could train for was set to 800, with the patience of 80 epochs
 (patience is a hyper-parameter that defines how many epochs will pass before EarlyStopping stops the training due to no
-improvement). The model was trained using Kaggle cloud computing and thus two Nvidia Tesla T4 GPUs were used for
+improvement). The model was trained using Kaggle cloud computing; thus, two Nvidia Tesla T4 GPUs were used for
 training the model. The optimizer was set to "auto", due to which "Stochastic Gradient Descent (aka SGD)" was used as 
 the optimizer. Default values were used for all other hyper-parameters.
 
-The model was trained for several hours before EarlyStopping terminated the trainings.
+The model was trained for several hours before EarlyStopping terminated the training.
 """)
 
 st.write("##### Model Links")
@@ -102,7 +102,7 @@ from ultralytics import YOLO
 st.write("##### Instantiating the Model and Loading the Input Video")
 st.write("""
 In this part of the prediction pipeline, The trained yolov10x model for vehicle detection is instantiated using the 
-ultralytics.YOLO class. Moreover, the input video is loaded in to memory using the cv2.VideoCapture class.
+ultralytics.YOLO class. Moreover, the input video is loaded into memory using the cv2.VideoCapture class.
 """)
 
 st.write("##### Defining and Initializing Polygon Zones for Filtering Detections")
@@ -113,7 +113,7 @@ those regions through which vehicles can enter the roundabout, and "exit polygon
 through which vehicles can exit the roundabout.
 
 Afterwards, sv.PolygonZone objects are initialized for the purpose of converting the numpy nd-array polygons defined
-above into supervision format, which will be make it easier for filtering detections and annotating the polygon zones
+above into supervision format, which will make it easier to filter detections and annotate the polygon zones
 on the input video frames.
 """)
 
@@ -129,14 +129,14 @@ roundabout (IN for entry and OUT for exit).
 4) TraceAnnotator is used to annotate the frames with lines tracing the paths followed by each vehicle in the video,
 this is important for analyzing the flow of traffic.
 
-In addition to the annotators, a tracker (sv.ByteTrack) object is also initialized for the purpose of tracking the
-vehicles throughout the video. This is important for tracing the path followed by each vehicle for the purpose of
+In addition to the annotators, a tracker (sv.ByteTrack) object is also initialized to track the
+vehicles throughout the video. This is important for tracing the path followed by each vehicle for 
 traffic flow analysis.
 """)
 
 st.write("##### Initializing the VideoWriter object")
 st.write("""
-In this part of the prediction pipeline, a cv2.VideoWriter object is initialized for the purpose of merging the
+In this part of the prediction pipeline, a cv2.VideoWriter object is initialized to merge the
 processed frames into the output video.
 """)
 
