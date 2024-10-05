@@ -17,7 +17,7 @@ with col1:
 with col2:
     st.title("Haroon Rashid", anchor=False)
     st.write(
-        "Computer Vision Engineer, providing advance visual perception to your cameras."
+        "Computer Vision Engineer, providing advanced visual perception to your cameras."
     )
     subCol1, subCol2 = st.columns(2, gap="small")
     with subCol1:
@@ -71,5 +71,5 @@ st.write("""
         - Problem Solving
         - Algorithm Designing
     -  Communication:
-        - Fluent English and Urdu
+        - Fluent in English and Urdu
 """)
