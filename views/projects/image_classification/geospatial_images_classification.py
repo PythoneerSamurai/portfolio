@@ -5,7 +5,7 @@ st.title("GeoSpatial Images Classification")
 st.write("\n")
 st.subheader("Project Overview", divider=True)
 st.write("""
-In this project I have trained a model for classifying the use of land based upon the satellite images received from
+In this project, I have trained a model for classifying the use of land-based on the satellite images received from
 the Sentinal-2 satellite. **This project has been implemented in both Keras and PyTorch**.
 """)
 
@@ -66,8 +66,8 @@ st.write("""
 Since the dataset was not structured to have a validation and training split, therefore 80% of the total images were
 used for training and 20% were used for validation. A batch size of 64 was used for training.
 
-The dataset was standardized and came with images having width and height of 64 pixels, therefore image resizing was 
-not carried out in this project. The images were rescaled to grayscale, and in case of the PyTorch implementation of 
+The dataset was standardized and came with images having a width and height of 64 pixels, therefore image resizing was 
+not carried out in this project. The images were rescaled to grayscale, and in the case of the PyTorch implementation of 
 this project, converted to torch tensors.
 """)
 
@@ -100,7 +100,7 @@ and ModelCheckpoint. The criterion for early stopping was set to training loss. 
 decrease for 7 consecutive epochs, the training would be terminated. As far as model checkpointing is concerned, 
 after each epoch, the model with the best training loss (lowest training loss) was saved.
 
-The trained model gave an accuracy higher than 96% (in case of PyTorch implementation the accuracy was calculated 
+The trained model gave an accuracy higher than 96% (in the case of PyTorch implementation the accuracy was calculated 
 using the **Accuracy class** provided in the **torchmetrics** package).
 """)
 
