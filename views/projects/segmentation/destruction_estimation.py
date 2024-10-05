@@ -19,8 +19,8 @@ with st.container(height=380, border=True):
 st.write("\n")
 st.subheader("Project Overview", divider=True)
 st.write("""
-In this project I have utilized various computer vision techniques, including but not limited to, semantic segmentation
-and SAHI (slicing aided hyper inference), for the purpose of estimating the destruction caused to construction in an
+In this project, I have utilized various computer vision techniques, including but not limited to, semantic segmentation
+and SAHI (slicing-aided-hyper-inference), to estimate the destruction caused to construction in an
 area. I have estimated the amount of buildings lost due to destruction with a high accuracy.
 """)
 
@@ -28,10 +28,10 @@ st.write("\n")
 st.subheader("Training Pipeline", divider=True)
 st.write("##### Training Data")
 st.write("""
-In the case of this project, only one yolov8x model has been utilized, that for the purpose of buildings segmentation.
+In the case of this project, only one yolov8x model has been utilized, for building segmentation.
 
-The dataset used to train the buildings segmentor model is the
-[Massachusetts Buildings Dataset](https://www.kaggle.com/datasets/balraj98/massachusetts-buildings-dataset) dataset
+The dataset used to train the buildings segmentation model is the
+[Massachusetts Buildings Dataset](https://www.kaggle.com/datasets/balraj98/massachusetts-buildings-dataset)
 provided by "**Balraj Ashwath**" on Kaggle.
 
 The dataset has only one class for segmentation, that is "buildings".
@@ -50,7 +50,7 @@ As mentioned above, only one model has been used in this project, that is a **yo
 segmentation. The model is the largest variant of its kind (as inferred by the "x" in the name of the model), and thus 
 has the highest mAP (Mean Average Precision) value, as benchmarked on the COCO dataset.
 
-In the case of this project, pretrained model (yolov8x.pt) was not used, rather a new model (yolov8x.yaml) was trained 
+In the case of this project, a pre-trained model (yolov8x.pt) was not used, rather a new model (yolov8x.yaml) was trained 
 from scratch (this resulted in better precision and recall).
 
 The model was accessed and trained using the Ultralytics YOLO API, as provided in the **"ultralytics"** Python
@@ -62,15 +62,15 @@ For more information regarding the YOLO models, refer to the
 
 st.write("##### Training Analysis")
 st.write("""
-The model was trained using the ".train" function present in the ultralytics YOLO class.
+The model was trained using the ".train" function in the ultralytics YOLO class.
 
-The maximum amount of epochs that the model could train for was set to 1000, with a patience of 80 epochs
+The maximum amount of epochs that the model could train for was set to 1000, with the patience of 80 epochs
 (patience is a hyper-parameter that defines how many epochs will pass before EarlyStopping stops the training due to no
-improvement). The model was trained using Kaggle cloud computing and thus two Nvidia Tesla T4 GPUs were used for
+improvement). The model was trained using Kaggle cloud computing; thus, two Nvidia Tesla T4 GPUs were used for
 training the model. The optimizer was set to "auto", due to which "Stochastic Gradient Descent (aka SGD)" was used as 
 the optimizer. Default values were used for all other hyper-parameters.
 
-The model was trained for several hours before EarlyStopping terminated the trainings.
+The model was trained for several hours before EarlyStopping terminated the training.
 """)
 
 st.write("##### Model Links")
@@ -104,10 +104,10 @@ from sahi.predict import get_sliced_prediction
 st.write("##### Specifying Parameters and Paths")
 st.write("""
 In this part of the prediction pipeline, four parameters are specified for later use, those being the minimum confidence
-threshold for registering model's segmentations, the device to be used for carrying out model inference, and the image
+threshold for registering the model's segmentations, the device to be used for carrying out model inference, and the image
 slice width and height to be used for SAHI.
 
-In addition to that, various paths are specified for proper functioning of the code, those being the paths to images of
+In addition to that, various paths are specified for the proper functioning of the code, those being the paths to images of
 an area before and after destruction, and the paths to the export directories of the segmented images.
 """)
 
