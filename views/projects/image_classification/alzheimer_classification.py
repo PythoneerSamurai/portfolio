@@ -14,13 +14,13 @@ also,
 > *Alzheimer’s is currently ranked as the seventh leading cause of death in the United States and is the most common 
 cause of dementia among older adults.*
 
-Keeping in view the adverse effects of Alzheimer's disease on the wellbeing of mankind, scientists have been working on
-newer, accurate, and more efficient ways for the diagnosis of this disease. Now with the inception of Artificial
+Keeping in view the adverse effects of Alzheimer's disease on the well-being of mankind, scientists have been working on
+newer, more accurate, and more efficient ways for the diagnosis of this disease. Now with the inception of Artificial
 Intelligence, a new era of early disease diagnosis has begun. Though in infancy, AI has been shown to have promising
 diagnosis capabilities in the field of healthcare.
 
-In this project I have trained a model which can accurately classify the existence or non-existence of Alzheimer's
-disease, by consuming MRI images of human brain. The model can be used by medical practitioners for the diagnosis 
+In this project, I have trained a model that can accurately classify the existence or non-existence of Alzheimer's
+disease, by consuming MRI images of the human brain. The model can be used by medical practitioners for the diagnosis 
 of the disease. **This project has been implemented in both Keras and PyTorch**.
 """)
 
@@ -95,7 +95,7 @@ with st.container(height=400, border=True):
 st.write("#### Training Analysis")
 st.write("""
 The model was trained for at most 30 epochs, with **Sparse Categorical CrossEntropy** being used as the loss
-function in the keras implementation and **CrossEntropy** being used as the loss function in the PyTorch
+function in the Keras implementation and **CrossEntropy** being used as the loss function in the PyTorch
 implementation (both losses are essentially the same). Adam was used as the optimizer, with default 
 hyper-parameter values, in both implementations.
 
@@ -106,7 +106,7 @@ the case of PyTorch implementation), the training would be terminated. As far as
 after each epoch, the model with the best training loss (lowest training loss) was saved. ModelCheckpoint callback
 was only used in the Keras implementation.
 
-The trained model gave an accuracy higher than 96% (in case of PyTorch implementation the accuracy was calculated 
+The trained model gave an accuracy higher than 96% (in the case of PyTorch implementation the accuracy was calculated 
 using the **Accuracy class** provided in the **torchmetrics** package).
 """)
 
