@@ -9,8 +9,8 @@ with st.container(height=400, border=True):
 st.write("\n")
 st.subheader("Project Overview", divider=True)
 st.write("""
-In this project I have utilized various computer vision techniques, including but not limited to, object detection,
-object tracking, and optical character recognition, for the purpose of vehicle license plate recognition. Note that
+In this project, I have utilized various computer vision techniques, including but not limited to, object detection,
+object tracking, and optical character recognition, for vehicle license plate recognition. Note that
 object detection is the task of merely localizing all the objects present in an image, whereas object recognition
 involves analyzing those objects and recognizing the information stored or represented by them.
 """)
@@ -19,7 +19,7 @@ st.write("\n")
 st.subheader("Training Pipeline", divider=True)
 st.write("##### Training Data")
 st.write("""
-In the case of this project, only one yolov8x model has been utilized, that for the purpose of vehicle license plate
+In the case of this project, only one yolov8x model has been utilized, for vehicle license plate
 detection.
 
 I couldn't find the dataset that I used for training this model, still qualitative information regarding the dataset
@@ -36,11 +36,11 @@ had sub-directories "train", "test", and "val".
 
 st.write("##### Model Used")
 st.write("""
-As mentioned above, only one model has been used in this project, that is a **yolov8x** model for vehicle license 
+As mentioned above, only one model has been used in this project: a **yolov8x** model for vehicle license 
 plate detection. The model is the largest variant of its kind (as inferred by the "x" in the name of the model), and 
 thus has the highest mAP (Mean Average Precision) value, as benchmarked on the COCO dataset.
 
-In the case of this project, pretrained model (yolov8x.pt) was not used, rather a new model (yolov8x.yaml) was trained 
+In the case of this project, a pre-trained model (yolov8x.pt) was not used, rather a new model (yolov8x.yaml) was trained 
 from scratch (this resulted in better precision and recall).
 
 The model was accessed and trained using the Ultralytics YOLO API, as provided in the **"ultralytics"** Python
@@ -52,15 +52,15 @@ For more information regarding the YOLO models, refer to the
 
 st.write("##### Training Analysis")
 st.write("""
-The model was trained using the ".train" function present in the ultralytics YOLO class.
+The model was trained using the ".train" function in the ultralytics YOLO class.
 
-The maximum amount of epochs that the model could train for was set to 600, with a patience of 50 epochs
+The maximum amount of epochs that the model could train for was set to 600, with the patience of 50 epochs
 (patience is a hyper-parameter that defines how many epochs will pass before EarlyStopping stops the training due to no
-improvement). The model was trained using Kaggle cloud computing and thus two Nvidia Tesla T4 GPUs were used for
+improvement). The model was trained using Kaggle cloud computing; thus, two Nvidia Tesla T4 GPUs were used for
 training the model. The optimizer was set to "auto", due to which "Stochastic Gradient Descent (aka SGD)" was used as 
 the optimizer. Default values were used for all other hyper-parameters.
 
-The model was trained for several hours before EarlyStopping terminated the trainings.
+The model was trained for several hours before EarlyStopping terminated the training.
 """)
 
 st.write("##### Model Links")
@@ -95,9 +95,9 @@ from ultralytics import YOLO
 st.write("##### Loading the Input Video, Instantiating the Model, and Initializing a VideoWriter Object")
 st.write("""
 In this part of the prediction pipeline, The trained yolov8x model for vehicle license plate detection is instantiated 
-using the ultralytics.YOLO class. Moreover, the input video is loaded in to memory using the cv2.VideoCapture class. 
+using the ultralytics.YOLO class. Moreover, the input video is loaded into memory using the cv2.VideoCapture class. 
 Afterwards, the width, height, and FPS information of the input video is extracted for later use. In addition to that,
-a cv2.VideoWriter object is initialized for the purpose of merging the processed frames into the output video.
+a cv2.VideoWriter object is initialized to merge the processed frames into the output video.
 """)
 
 st.write("##### Initializing Annotators")
@@ -112,7 +112,7 @@ it spends, in the video.
 
 st.write("##### Initializing the Tracker and OCR object")
 st.write("""
-In this part of the prediction pipeline, a tracker (sv.ByteTrack) is initialized for the purpose of tracking the license
+In this part of the prediction pipeline, a tracker (sv.ByteTrack) is initialized to track the license
 plates throughout the video frames. This is important to keep track of the total time spent by the vehicles in the 
 footage. In addition to the tracker, an EasyOCR object is initialized for the purpose of reading the license plate 
 numbers from the detected license plates.
@@ -124,7 +124,7 @@ In this part of the training pipeline, three dictionary objects are initialized 
 
 In addition to that, a time estimator function is defined for the purpose of estimating the time each vehicle spends in 
 the footage. This function uses the previously stored entry frame of each vehicle in the footage, and subsequent frames
-(up until the exit frame of the vehicle), for the purpose of time estimation.
+(up until the exit frame of the vehicle), for time estimation.
 """)
 
 st.write("##### Defining the Frame Processor Function")
