@@ -9,7 +9,7 @@ with st.container(height=410, border=True):
 st.write("\n")
 st.subheader("Project Overview", divider=True)
 st.write("""
-In this project I have utilized semantic segmentation for the purpose of skin cancer analysis. This project shows the
+In this project, I have utilized semantic segmentation for skin cancer analysis. This project shows the
 potential that computer vision holds for medicinal purposes. Using the model trained in this project, and computer
 vision in general, patients can get their diseases diagnosed in the comfort of their homes.
 """)
@@ -18,7 +18,7 @@ st.write("\n")
 st.subheader("Training Pipeline", divider=True)
 st.write("##### Training Data")
 st.write("""
-In the case of this project, only one yolov8x model has been utilized, that for the purpose of skin cancer segmentation.
+In the case of this project, only one yolov8x model has been utilized, that for skin cancer segmentation.
 
 The dataset used to train the model is the
 [Skin cancer: HAM10000](https://www.kaggle.com/datasets/surajghuwalewala/ham1000-segmentation-and-classification) 
@@ -36,11 +36,11 @@ had sub-directories "train", "test", and "val".
 
 st.write("##### Model Used")
 st.write("""
-As mentioned above, only one model has been used in this project, that is a **yolov8x** model for skin cancer
+As mentioned above, only one model has been used in this project: a **yolov8x** model for skin cancer
 segmentation. The model is the largest variant of its kind (as inferred by the "x" in the name of the model), and thus 
 has the highest mAP (Mean Average Precision) value, as benchmarked on the COCO dataset.
 
-In the case of this project, pretrained model (yolov8x.pt) was not used, rather a new model (yolov8x.yaml) was trained 
+In the case of this project, a pre-trained model (yolov8x.pt) was not used, rather a new model (yolov8x.yaml) was trained 
 from scratch (this resulted in better precision and recall).
 
 The model was accessed and trained using the Ultralytics YOLO API, as provided in the **"ultralytics"** Python
@@ -54,13 +54,13 @@ st.write("##### Training Analysis")
 st.write("""
 The model was trained using the ".train" function present in the ultralytics YOLO class.
 
-The maximum amount of epochs that the model could train for was set to 600, with a patience of 50 epochs
+The maximum amount of epochs that the model could train for was set to 600, with the patience of 50 epochs
 (patience is a hyper-parameter that defines how many epochs will pass before EarlyStopping stops the training due to no
 improvement). The model was trained using Kaggle cloud computing and thus two Nvidia Tesla T4 GPUs were used for
 training the model. The optimizer was set to "auto", due to which "Stochastic Gradient Descent (aka SGD)" was used as 
 the optimizer. Default values were used for all other hyper-parameters.
 
-The model was trained for several hours before EarlyStopping terminated the trainings.
+The model was trained for several hours before EarlyStopping terminated the training.
 """)
 
 st.write("##### Model Links")
@@ -94,22 +94,22 @@ import os
 
 st.write("##### Initializing Parameters")
 st.write("""
-In this part of the prediction pipeline, various parameters are initialized for the purpose of annotating the input
+In this part of the prediction pipeline, various parameters are initialized to annotate the input
 images with textual information representing skin cancer analysis.
 """)
 
 st.write("##### Initializing a cv2.VideoWriter Object")
 st.write("""
 In this part of the prediction pipeline, a cv2.VideoWriter object is initialized, along with some required parameters,
-for the purpose of merging the processed input images into the output video.
+to merge the processed input images into the output video.
 """)
 
 st.write("##### Instantiating the Model and Initializing an Annotator")
 st.write("""
-In this part of the prediction pipeline, the trained yolov8x model for skin caner segmentation is initialized into 
-memory, for the purpose of carrying inference on the input images.
+In this part of the prediction pipeline, the trained yolov8x model for skin cancer segmentation is initialized into 
+memory, to carry inference on the input images.
 
-Moreover, a supervision MaskAnnotator object is initialized for the purpose of annotating the input images with the skin
+Moreover, a supervision MaskAnnotator object is initialized to annotate the input images with the skin
 cancer segmentations inferred from the model.
 """)
 
