@@ -20,7 +20,7 @@ st.write("#### Training Data")
 st.write("""
 The dataset used for training the model is the 
 [CIFAKE: Real and AI-Generated Synthetic Images](https://www.kaggle.com/datasets/birdy654/cifake-real-and-ai-generated-synthetic-images),
-provided by **"Jordan J. Bird"** on Kaggle. 
+dataset provided by **"Jordan J. Bird"** on Kaggle. 
 
 This dataset has two classes for classification, those being:
 
