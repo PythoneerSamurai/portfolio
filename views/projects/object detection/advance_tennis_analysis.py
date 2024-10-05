@@ -9,12 +9,12 @@ with st.container(height=350, border=True):
 st.write("\n")
 st.subheader("Project Overview", divider=True)
 st.write("""
-In this project I have utilized advance computer vision skills, including but not limited to, region-based object
-detection, object tracking, object speed estimation, and multiple perspective transformations, for the purpose of
+In this project, I have utilized advanced computer vision skills, including but not limited to, region-based object
+detection, object tracking, object speed estimation, and multiple perspective transformations, for
 carrying out a detailed analysis of a tennis match.
 
-I have accurately estimated ball speeds, classified players, and produced a radar view of the court using perspective 
-transformations!
+I have accurately estimated ball speeds, classified players, and produced a radar view of the court using multiple 
+perspective transformations!
 """)
 
 st.write("\n")
@@ -26,11 +26,11 @@ Two models, yolov8x and yolov10x, have been trained for this project, the former
 the latter for player object detection.
 
 The dataset used to train the tennis ball detection model is the
-[tennis ball detection](https://universe.roboflow.com/viren-dhanwani/tennis-ball-detection) dataset
+[tennis ball detection](https://universe.roboflow.com/viren-dhanwani/tennis-ball-detection)
 provided by "**Viren Dhanwani**" on Roboflow Universe.
 
 The dataset used to train the player detection model is the
-[person detection](https://universe.roboflow.com/konstantin-sargsyan-wucpb/person-detection-lc325) dataset
+[person detection](https://universe.roboflow.com/konstantin-sargsyan-wucpb/person-detection-lc325)
 provided by "**Konstantin Sargsyan**" on Roboflow Universe.
 
 Both datasets have only one class for detection, the former having the class "tennis ball" and the latter having the
@@ -50,7 +50,7 @@ a **yolov10x** model for player object detection. Both models are the largest va
 "x" in the names of the models), and thus have the highest mAP (Mean Average Precision) values, as benchmarked on the
 COCO dataset.
 
-In the case of this project, pretrained models (yolov8x.pt and yolov10x.pt) were not used, rather new models 
+In the case of this project, pre-trained models (yolov8x.pt and yolov10x.pt) were not used, rather new models 
 (yolov8x.yaml and yolov10x.yaml) were trained from scratch (this resulted in better precision and recall).
 
 Both the models were accessed and trained using the Ultralytics YOLO API, as provided in the **"ultralytics"** Python
@@ -62,11 +62,11 @@ For more information regarding the YOLO models, refer to the
 
 st.write("##### Training Analysis")
 st.write("""
-Both models were trained using the ".train" function present in the ultralytics YOLO class.
+Both models were trained using the ".train" function in the ultralytics YOLO class.
 
-The maximum amount of epochs that the models could train for was set to 600, with a patience of 50 epochs
+The maximum amount of epochs that the models could train for was set to 600, with the patience of 50 epochs
 (patience is a hyper-parameter that defines how many epochs will pass before EarlyStopping stops the training due to no
-improvement). The models were trained using Kaggle cloud computing and thus two Nvidia Tesla T4 GPUs were used for
+improvement). The models were trained using Kaggle cloud computing; thus, two Nvidia Tesla T4 GPUs were used for
 training the models. The optimizer was set to "auto", due to which "Stochastic Gradient Descent (aka SGD)" was used as 
 the optimizer. Default values were used for all other hyper-parameters.
 
@@ -114,7 +114,7 @@ st.write("##### Loading and Manipulating Data")
 st.write("""
 In this part of the prediction pipeline, the radar court image to be annotated is loaded into memory. In addition to 
 that, the input video is also loaded using the cv2.VideoCapture function, and the width, height, and FPS information 
-of the input video is extracted for later use. Afterwards, the output video writer is initialized using the 
+of the input video are extracted for later use. Afterward, the output video writer is initialized using the 
 cv2.VideoWriter class. The parameters used for writing the output video are listed below.
 """)
 
@@ -126,14 +126,14 @@ VIDEO_RESOLUTION = (2372, HEIGHT)
 
 st.write("##### Perspective Transformations")
 st.write("""
-In this part of the prediction pipeline, the matrices for perspective transformations are defined. In order to accurately
-estimate the speed of the ball and it's location on the court in real life, we must remove the visual distortion caused 
-by the single camera recording the match. This is because in the video the farther part of the court occupies less 
+In this part of the prediction pipeline, the matrices for perspective transformations are defined. To accurately
+estimate the speed of the ball and its location on the court in real life, we must remove the visual distortion caused 
+by the single camera recording the match. This is because in the video the farther part of the court occupies fewer 
 pixels in width as compared to the closer part of the court, the same goes for the length of the court which cannot be 
 correctly estimated using the pixel values of the input video frames. Therefore, we must transform the pixel values 
 occupied by the court in the video frames to a court having pixel width and height same as the court's in real life. In 
-this way we can use a single pixel of the transformed court as 1 meter in length. Ultimately, we can use the transformed 
-court to correctly estimate the speeds of the ball and it's location on the court.
+this way, we can use a single pixel of the transformed court as 1 meter in length. Ultimately, we can use the transformed 
+court to correctly estimate the speeds of the ball and its location on the court.
 
 We define three matrices for perspective transformations.
 
@@ -142,7 +142,7 @@ We define three matrices for perspective transformations.
 3) The target radar view matrix has the coordinates of each corner of the radar court image loaded above, this image
    will be used to show a top-down view of the court along with the positions the ball hit on the court.
    
-Afterwards, the cv2.getPerspectiveTransform function is used to transform the source matrix to corresponding output
+Afterward, the cv2.getPerspectiveTransform function is used to transform the source matrix to the corresponding output
 matrices.
 
 Later we define functions to transform the coordinates travelled by the ball on the source matrix to the output 
@@ -151,14 +151,14 @@ matrices.
 
 st.write("##### Defining and Initializing Polygon Zones for Filtering Detections")
 st.write("""
-In this part of the prediction pipeline, the polygon zones that the court will be divided into for the purpose of 
-filtering detections, are defined. The court polygons will be used to define the regions the ball can be present in the 
+In this part of the prediction pipeline, the polygon zones that the court will be divided into to filter detections, are 
+defined. The court polygons will be used to define the regions where the ball can be present in the 
 court. The player polygons are used to define the regions the players move in, this is to filter the players from other
 people in the video.
 
 After the polygon zones are defined, sv.PolygonZone objects are initialized to convert the polygon coordinates defined 
-above into supervision format, and to specify the triggering anchors (the xy-coordinates) that will decide if an object 
-is inside the zones or not. Player one polygon zone is the region in the video in which player one can move in, same 
+above into supervision format and to specify the triggering anchors (the xy-coordinates) that will decide if an object 
+is inside the zones or not. Player one polygon zone is the region in the video in which player one can move in, the same 
 goes for the player two polygon zone. Along with the player polygon zones, the court polygon zones are also initialized,
 these zones will be used to decide the xy-coordinates of the ball in the court.
 """)
@@ -176,14 +176,14 @@ information, are initialized.
 st.write("##### Initializing Trackers")
 st.write("""
 In this part of the prediction pipeline, trackers (sv.ByteTrack) to track the ball and the players throughout the video, 
-are initialized. Tracker ids received by the ball tracker are used to estimate the speeds of the ball, whereas the 
-information from player tracker is used to keep track of the players for correct name annotation.
+are initialized. Tracker IDs received by the ball tracker are used to estimate the speeds of the ball, whereas the 
+information from the player tracker is used to keep track of the players for correct name annotation.
 """)
 
 st.write("##### Instantiating Trained Models")
 st.write("""
 In this part of the prediction pipeline, both of my trained models (yolov8x model for tennis ball detection and yolov10x
-model for player detection). are instantiated, and the confidence scores for the models is specified to be 0.2.
+model for player detection). are instantiated, and the confidence scores for the models are specified to be 0.2.
 """)
 
 st.write("##### Specifying Parameters and Instantiating Objects")
@@ -202,17 +202,17 @@ later on in speed estimation.
 
 st.write("##### Defining Various Functions")
 st.write("""
-In this part of the prediction pipeline, two function are defined for transforming the xy-coordinates travelled by the
+In this part of the prediction pipeline, two functions are defined for transforming the xy-coordinates travelled by the
 ball on the source matrix (as defined before), to the target matrices.
 
 Moreover, functions for annotating the radar view image with circles, annotating frames with tennis analytics, and
-the main function that deals with all frame processing are defined.
+the main function that deals with all frame processing is defined.
 """)
 
 st.write("##### Main Loop")
 st.write("""
 Lastly, the main loop that breaks the input video into frames and calls relevant functions is started. This loop
-gets the models inference on the frames and then calls the frameProcessor() function for inference handling and 
+gets the model inferences on the frames and then calls the frameProcessor() function for inference handling and 
 frame processing.
 """)
 
