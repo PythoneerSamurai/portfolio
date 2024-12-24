@@ -10,7 +10,14 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 IMAGE_CLASSIFICATION_DIRECTORY_PATH = "views/projects/image_classification"
 OBJECT_DETECTION_DIRECTORY_PATH = "views/projects/object detection"
 SEGMENTATION_DIRECTORY_PATH = "views/projects/segmentation"
-KEYPOINTS_DETECTION_PATH = "views/projects/keypoints_detection"
+KEYPOINTS_DETECTION_PATH = "views/projects/key_points_regression"
+
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 about_page = st.Page(
     page="views/about_me.py",
@@ -121,6 +128,13 @@ skin_cancer_analysis_page = st.Page(
     title="skin cancer analysis",
     icon=":material/microbiology:",
 )
+# ----- KEY POINTS REGRESSION PROJECT PAGES -----
+advance_volleyball_analysis_page = st.Page(
+    page=f"{KEYPOINTS_DETECTION_PATH}/advance_volleyball_analysis.py",
+    title="advance volleyball analysis",
+    icon=":material/sports_volleyball:",
+)
+
 # -------- Navigation --------
 pg = st.navigation({
     "Info": [about_page],
@@ -150,7 +164,10 @@ pg = st.navigation({
         leaf_disease_analysis_page,
         road_area_estimation_page,
         skin_cancer_analysis_page
-    ]
+    ],
+    "Key Points Regression": [
+        advance_volleyball_analysis_page
+    ],
 })
 
 st.logo(image="assets/logo.png")
