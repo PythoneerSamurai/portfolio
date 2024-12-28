@@ -36,7 +36,8 @@ st.subheader("Experience and Qualifications", anchor=False)
 st.write("""
    - 4th semester Bachelor's of Computer Science student at the National University of Modern Languages, Islamabad, 
      Pakistan.
-   - Almost 2 years of self-gained experience in Python and Computer Vision.
+   - 2 years of self-gained experience in Python and Computer Vision.
+   - 20+ high-quality projects made, 150+ models trained, and 3 high-quality datasets annotated.
    - Deep understanding of Computer Vision algorithms and mathematics.
    - Excellent solo-developer skills. 
 """)
@@ -52,7 +53,7 @@ st.write("""
         - Image Classification
         - Object Detection (Simple + OBB)
         - Segmentation (Semantic + Instance)
-        - Keypoints detection
+        - Key Points Regression
         - Model Implementations (i.e, GANs)
    - Advance Computer Vision Skills:
         - Object Tracking
