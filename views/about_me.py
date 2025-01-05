@@ -36,7 +36,7 @@ st.subheader("Experience and Qualifications", anchor=False)
 st.write("""
    - 4th semester Bachelor's of Computer Science student at the National University of Modern Languages, Islamabad, 
      Pakistan.
-   - 2 years of self-gained experience in Python and Computer Vision.
+   - Over 2 years of experience in Python and Computer Vision.
    - 20+ high-quality projects made, 150+ models trained, and 3 high-quality datasets annotated.
    - Deep understanding of Computer Vision algorithms and mathematics.
    - Excellent solo-developer skills. 
@@ -47,7 +47,7 @@ st.subheader("Hard Skills", anchor=False)
 st.write("""
    - Programming: Python, Java, C++.
    - Development:
-        - Python Desktop App Development (ttkbootstrap + customtkinter libraries)
+        - Python Desktop App Development (TKinter +TTKBootstrap + CustomTkinter)
         - Streamlit Web App Development
    - Computer Vision:
         - Image Classification
