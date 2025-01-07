@@ -4,7 +4,7 @@ import streamlit as st
 @st.dialog("Links")
 def links():
     st.write("""
-    ## Gmail
+    ## Email
     
     haroonrashidcc3@gmail.com
     
@@ -18,9 +18,9 @@ def links():
     
     ## Kaggle
     
-    https://www.kaggle.com/pythonistasamurai/models
+    https://www.kaggle.com/pythonistasamurai
     
-    ## IDrive
+    ## Roboflow
     
-    https://www.idrive.com/idrive/sh/sh/y7v2k6p4p8
+    https://universe.roboflow.com/primaryws/
     """)
