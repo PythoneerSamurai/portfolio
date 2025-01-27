@@ -39,6 +39,7 @@ st.write("""
    - Over 2 years of experience in Python and Computer Vision.
    - 20+ high-quality projects made, 150+ models trained, and 3 high-quality datasets annotated.
    - Deep understanding of Computer Vision algorithms and mathematics.
+   - Currently learning 3D Computer Vision via R&D.
    - Excellent solo-developer skills. 
 """)
 
@@ -61,6 +62,7 @@ st.write("""
         - Perspective transformations
         - *and more*
     - Computer Vision Tools and Frameworks:
+        - PyTorch3D
         - Keras
         - PyTorch
         - YOLO
