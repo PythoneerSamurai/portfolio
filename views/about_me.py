@@ -10,7 +10,7 @@ col1, col2 = st.columns(2, gap="small", vertical_alignment="center")
 
 with col1:
     st.image(
-        image="./assets/profile-pic.png",
+        image="https://i.postimg.cc/HWr88hPR/profile-pic.png",
         width=250,
     )
 
