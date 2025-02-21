@@ -34,7 +34,7 @@ with col2:
 st.write("\n")
 st.subheader("Experience and Qualifications", anchor=False)
 st.write("""
-   - 4th semester Bachelor's of Computer Science student at the National University of Modern Languages, Islamabad, 
+   - 5th semester Bachelor's of Computer Science student at the National University of Modern Languages, Islamabad, 
      Pakistan.
    - Over 2 years of experience in Python and Computer Vision.
    - 20+ high-quality projects made, 150+ models trained, and 3 high-quality datasets annotated.
