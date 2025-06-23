@@ -17,7 +17,7 @@ with col1:
 with col2:
     st.title("Haroon Rashid", anchor=False)
     st.write(
-        "Computer Vision Engineer, providing advanced visual perception to your cameras."
+        "Computer Scientist + A student of Computer Vision."
     )
     subCol1, subCol2 = st.columns(2, gap="small")
     with subCol1:
@@ -36,10 +36,10 @@ st.subheader("Experience and Qualifications", anchor=False)
 st.write("""
    - 5th semester Bachelor's of Computer Science student at the National University of Modern Languages, Islamabad, 
      Pakistan.
-   - Over 2 years of experience in Python and Computer Vision.
+   - Close to 3 years of experience in Python and 2D Computer Vision.
    - 20+ high-quality projects made, 150+ models trained, and 3 high-quality datasets annotated.
    - Deep understanding of Computer Vision algorithms and mathematics.
-   - Currently learning 3D Computer Vision via R&D.
+   - Currently, a research scientist in the field of 3D Computer Vision.
    - Excellent solo-developer skills. 
 """)
 
