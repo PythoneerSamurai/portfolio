@@ -2,7 +2,7 @@ import streamlit as st
 
 from dialogs.dialog import links
 
-RESUME_FILE = "assets/resume.pdf"
+RESUME_FILE = "portfolio/assets/resume.pdf"
 
 col1, col2 = st.columns(2, gap="small", vertical_alignment="center")
 
