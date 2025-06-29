@@ -3,8 +3,6 @@ import streamlit as st
 from dialogs.dialog import links
 
 RESUME_FILE = "assets/resume.pdf"
-with open(RESUME_FILE, "rb") as pdf_file:
-    PDFByte = pdf_file.read()
 
 col1, col2 = st.columns(2, gap="small", vertical_alignment="center")
 
@@ -21,11 +19,12 @@ with col2:
     )
     subCol1, subCol2 = st.columns(2, gap="small")
     with subCol1:
-        st.download_button(
+        with open(RESUME_FILE, "rb") as pdf_file:
+            btn=st.download_button(
             label="Download Resume",
-            data=PDFByte,
+            data=pdf_file,
             file_name="resume.pdf",
-            mime="application/octet-stream",
+            mime="application/octet-stream"
         )
     with subCol2:
         if st.button("Links"):
