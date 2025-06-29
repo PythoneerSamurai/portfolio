@@ -20,7 +20,7 @@ with col2:
     subCol1, subCol2 = st.columns(2, gap="small")
     with subCol1:
         with open(RESUME_FILE, "rb") as pdf_file:
-            btn=st.download_button(
+            st.download_button(
             label="Download Resume",
             data=pdf_file,
             file_name="resume.pdf",
