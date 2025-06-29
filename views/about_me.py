@@ -25,7 +25,7 @@ with col2:
             label="Download Resume",
             data=PDFByte,
             file_name="resume.pdf",
-            mime="application/octet-stream",
+            mime="application/pdf",
         )
     with subCol2:
         if st.button("Links"):
