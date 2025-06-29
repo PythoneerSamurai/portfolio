@@ -21,13 +21,12 @@ with col2:
     )
     subCol1, subCol2 = st.columns(2, gap="small")
     with subCol1:
-        with open(RESUME_FILE, "rb") as pdf_file:
-            st.download_button(
-                label="Download Resume",
-                data=PDFByte,
-                file_name="resume.pdf",
-                mime="application/octet-stream",
-            )
+        st.download_button(
+            label="Download Resume",
+            data=PDFByte,
+            file_name="resume.pdf",
+            mime="application/octet-stream",
+        )
     with subCol2:
         if st.button("Links"):
             links()
