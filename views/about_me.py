@@ -2,7 +2,7 @@ import streamlit as st
 
 from dialogs.dialog import links
 
-RESUME_FILE = "assets/2501.03830v1.pdf"
+RESUME_FILE = "assets/resume.pdf"
 
 col1, col2 = st.columns(2, gap="small", vertical_alignment="center")
 
@@ -25,7 +25,6 @@ with col2:
             label="Download Resume",
             data=PDFByte,
             file_name="resume.pdf",
-            mime="application/octet-stream"
         )
     with subCol2:
         if st.button("Links"):
