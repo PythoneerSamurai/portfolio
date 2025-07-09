@@ -3,7 +3,7 @@ import streamlit as st
 st.title("Advance Tennis Analysis")
 st.write("\n")
 
-with st.container(height=350, border=True):
+with st.container(border=True):
     st.video("assets/object_detection/advance_tennis_analysis/output_video.mp4", muted=True)
 
 st.write("\n")
