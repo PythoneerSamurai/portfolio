@@ -3,10 +3,10 @@ import streamlit as st
 st.title("Advance Volleyball Analysis")
 st.write("\n")
 
-with st.container(height=400, border=True):
+with st.container(border=True):
     st.video("assets/key_points_regression/advance_volleyball_analysis/processed_court.mp4", muted=True)
 
-with st.container(height=400, border=True):
+with st.container(border=True):
     st.video("assets/key_points_regression/advance_volleyball_analysis/processed_radar.mp4", muted=True)
 
 st.write("\n")
