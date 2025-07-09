@@ -3,7 +3,7 @@ import streamlit as st
 st.title("License Plate Recognition")
 st.write("\n")
 
-with st.container(height=400, border=True):
+with st.container(border=True):
     st.video("assets/object_detection/license_plate_recognition/input_video.mp4", muted=True)
 
 st.write("\n")
