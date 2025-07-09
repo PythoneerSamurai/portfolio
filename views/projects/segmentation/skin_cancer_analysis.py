@@ -3,7 +3,7 @@ import streamlit as st
 st.title("Skin Cancer Analysis")
 st.write("\n")
 
-with st.container(height=410, border=True):
+with st.container(border=True):
     st.video("assets/segmentation/skin_cancer_analysis/input_video.mp4", muted=True)
 
 st.write("\n")
