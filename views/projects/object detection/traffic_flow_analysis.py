@@ -3,7 +3,7 @@ import streamlit as st
 st.title("Traffic Flow Analysis")
 st.write("\n")
 
-with st.container(height=400, border=True):
+with st.container(border=True):
     st.video("assets/object_detection/traffic_flow_analysis/input_video.mp4", muted=True)
 
 st.write("\n")
