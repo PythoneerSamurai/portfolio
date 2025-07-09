@@ -3,7 +3,7 @@ import streamlit as st
 st.title("Vehicle Speed Estimation")
 st.write("\n")
 
-with st.container(height=400, border=True):
+with st.container(border=True):
     st.video("assets/object_detection/vehicle_speed_estimation/input_video.mp4", muted=True)
 
 st.write("\n")
