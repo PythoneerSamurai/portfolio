@@ -15,6 +15,7 @@ with col1:
     )
 
 with col2:
+    st.title("VERY OLD PORTFOLIO, WILL MAKE A NEW ONE IN FREE TIME INSHA'ALLAH.")
     st.title("Haroon Rashid", anchor=False)
     st.write(
         "Computer Scientist + A student of Computer Vision."
